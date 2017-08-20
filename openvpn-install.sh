@@ -182,11 +182,10 @@ else
 	echo 'Welcome to this quick OpenVPN "road warrior" installer'
 	echo ""
 	# OpenVPN setup and first user creation
-	echo "I need to ask you a few questions before starting the setup"
-	echo "You can leave the default options and just press enter if you are ok with them"
+	echo "We'll use the defaults for this install."
 	echo ""
-	echo "Using IP: $IP"
-	echo "Selected protocol UDP"
+	echo "IP: $IP"
+	echo "Protocol UDP"
 	PROTOCOL=1
 	case $PROTOCOL in
 		1) 
@@ -197,8 +196,8 @@ else
 		;;
 	esac
 	echo ""
-	echo "Selected PORT 443"
 	PORT=443
+	echo "PORT: $PORT"
 	echo ""
 # 	echo "Which DNS do you want to use with the VPN?"
 # 	echo "   1) Current system resolvers"
@@ -210,7 +209,7 @@ else
 # 	read -p "DNS [1-6]: " -e -i 1 DNS
 	DNS=1
 	CLIENT="vpn"
-	echo "Okay, that was all I needed. We are ready to setup your OpenVPN server now"
+	echo "Starting install now."
 	if [[ "$OS" = 'debian' ]]; then
 		apt-get update
 		apt-get install openvpn iptables openssl ca-certificates -y
@@ -406,4 +405,6 @@ verb 3" > /etc/openvpn/client-common.txt
 	echo ""
 	echo "Your client configuration is available at" ~/"$CLIENT.ovpn"
 	echo "If you want to add more clients, you simply need to run this script again!"
+	echo "From your client machine, run"
+	echo "scp $USER@$IP:$PWD/$CLIENT.ovpn ./"
 fi

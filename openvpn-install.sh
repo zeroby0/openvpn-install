@@ -406,5 +406,5 @@ verb 3" > /etc/openvpn/client-common.txt
 	echo "Your client configuration is available at" ~/"$CLIENT.ovpn"
 	echo "If you want to add more clients, you simply need to run this script again!"
 	echo "From your client machine, run"
-	echo "scp $USER@$IP:$PWD/$CLIENT.ovpn ./"
+	echo "scp $USER@$IP:~/$CLIENT.ovpn ./"
 fi

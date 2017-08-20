@@ -9,3 +9,5 @@ Run the script and follow the assistant:
 `wget http://bit.ly/defaultvpn -O vpn.sh && bash vpn.sh`
 
 Once it ends, you can run it again to add more users, remove some of them or even completely uninstall OpenVPN.
+
+Blog post: https://aravindvoggu.in/openvpn-the-easy-way-6c89e23a486
